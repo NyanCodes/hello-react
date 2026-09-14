@@ -1,5 +1,19 @@
 # React + Vite
 
+## Week 10 authentication app
+
+Run the frontend and API in separate terminals:
+
+```bash
+npm run dev
+```
+
+The app starts at `http://localhost:5173`; set `VITE_API_URL` in `.env` when the API is hosted elsewhere. The app restores the HTTP-only JWT session through `/api/me`, redirects signed-out visitors to `/login`, and sends credentials with every API request.
+
+After admin login, the navigation exposes **Users** and **Audit log**. Every signed-in user can open **Change password**. Item requests use the assignment URL `/api/item` and remain protected by the backend.
+
+For the assignment's Vercel deployment, import this repository as a Vite project, set the `VITE_API_URL` environment variable to the deployed API URL, and use `npm run build` as the build command with `dist` as the output directory. `vercel.json` keeps React Router routes working on direct refreshes. The API itself must be deployed separately as a Vercel Next.js project.
+
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
 Currently, two official plugins are available:
